@@ -48,14 +48,30 @@ int main(int argc, char* argv[])
 // Algorithm: Iterate from forward to back, and from back to forward, and check that they are the same.
 bool check1(string stringToCheck)
 {
-    // TODO: Write your code here.
-
+    for (int i=0;i<=stringToCheck.size();i++)
+    {
+        char char1=stringToCheck[i];
+        char char0=stringToCheck[stringToCheck.size()-1-i];
+        if (char1!=char0)
+            return false;
+    }
+    return true;
 }
 
 // This function will return true if the input string is a palindrome.
 // Algorithm: Create a copy of the string, in reverse, and check that the copy matches the original.
 bool check2(string stringToCheck)
 {
-    // TODO: Write your code here.
+    string string1;
+    for (int i=stringToCheck.size();i>0;i--)
+    {
+        char char0=stringToCheck[i-1];
+        string1+=char0;
+    }
 
+    if (stringToCheck==string1)
+        return true;
+    else
+        return false;
+    
 }
